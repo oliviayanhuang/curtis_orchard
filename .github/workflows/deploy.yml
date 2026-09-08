@@ -22,13 +22,13 @@ jobs:
       run:
         working-directory: curtis-orchard-companion
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v6
         with:
           version: 10
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: pnpm
@@ -41,11 +41,16 @@ jobs:
           # Project sites are served from https://<user>.github.io/<repo>/
           VITE_BASE: /${{ github.event.repository.name }}/
 
-      - uses: actions/configure-pages@v5
+      # Requires Pages to already be enabled with "GitHub Actions" as the
+      # source. The action's `enablement` input cannot do it for us: it needs a
+      # PAT, not the workflow's GITHUB_TOKEN.
+      - uses: actions/configure-pages@v6
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: curtis-orchard-companion/dist
+          # The build emits .nojekyll, which is excluded by default.
+          include-hidden-files: true
 
   deploy:
     needs: build
@@ -55,4 +60,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
