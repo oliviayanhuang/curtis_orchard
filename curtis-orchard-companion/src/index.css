@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+@theme {
+  /* Surfaces */
+  --color-page: #f1f1ef;
+  --color-surface: #ffffff;
+  --color-sunken: #e9e9e6;
+  --color-line: #e4e3df;
+  --color-line-strong: #d5d4ce;
+
+  /* Ink */
+  --color-ink: #16161a;
+  --color-ink-2: #56565d;
+  --color-ink-3: #8a8a91;
+
+  /* Brand */
+  --color-orchard: #1e5631;
+  --color-orchard-deep: #143c22;
+  --color-orchard-soft: #e6efe7;
+  --color-apple: #b3242c;
+  --color-harvest: #c07c22;
+
+  /* Map palette */
+  --color-field: #d9e7c8;
+  --color-canopy: #a9c78c;
+  --color-canopy-deep: #8fb271;
+  --color-path: #ece2cf;
+  --color-water: #bcd8ea;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+    system-ui, Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  --radius-card: 14px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 2px rgba(20, 20, 24, 0.05);
+  --shadow-lift: 0 6px 20px -8px rgba(20, 20, 24, 0.28);
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-sunken);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: none;
+}
+
+/* Headings here are tight and bold, never light-weight display type. */
+h1,
+h2,
+h3 {
+  margin: 0;
+  letter-spacing: -0.021em;
+  font-weight: 700;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* Outdoor/sunlight use: keep focus rings obvious, never remove them. */
+:focus-visible {
+  outline: 2px solid var(--color-orchard);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
