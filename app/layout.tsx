@@ -18,11 +18,11 @@ export const metadata: Metadata = {
   ),
   title: 'Curtis Orchard Visitor Companion',
   description:
-    'Today’s venue hours, apples, activity updates, help, and an accessible farm map for Curtis Orchard & Pumpkin Patch.',
+    'Find your way, discover what to do, and build a simple plan for your Curtis Orchard visit.',
   openGraph: {
     title: 'Curtis Orchard Visitor Companion',
     description:
-      'Today’s apples, activities, venue hours, and farm map—all in one quick guide.',
+      'Map the orchard, explore activities, and build a simple visit plan.',
     type: 'website',
     images: [
       {
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Curtis Orchard Visitor Companion',
     description:
-      'Today’s apples, activities, venue hours, and farm map—all in one quick guide.',
+      'Map the orchard, explore activities, and build a simple visit plan.',
     images: ['/og.png'],
   },
 };
