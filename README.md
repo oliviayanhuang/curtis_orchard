@@ -1,15 +1,15 @@
 # Curtis Orchard Visitor Companion
 
-A mobile-first visitor companion for Curtis Orchard & Pumpkin Patch. The current build implements the whitepaper’s MVP flow:
+A mobile-first guide for visitors at Curtis Orchard & Pumpkin Patch.
 
-- one-glance Today view with venue-specific hours;
-- separate U-Pick and Country Store apple availability;
-- plain-language activity states, stale/offline messaging, and a persistent call-for-help path;
-- interactive farm map with filters, walking context, and structured accessibility notes;
-- phone-friendly staff preview with review, publish, local audit history, and undo;
-- pure operational domain functions with schedule → exception → override precedence tests;
-- privacy-conscious, device-local pilot events; and
-- an imperative WebMCP surface for reading Today and opening/focusing the map.
+The `Simplified` branch contains the streamlined visitor experience:
+
+- an illustrated farm map with search, filters, hotspots, and location previews;
+- an Explore directory for picking, family activities, animals, food, shopping, pumpkins, and accessibility;
+- a four-step Plan My Visit flow with an adjustable itinerary; and
+- detailed location pages with terrain, admission, accessibility, tips, and nearby stops.
+
+The Today page, event listings, live inventory, staff editor, login, and database features are intentionally outside this version's scope.
 
 ## Run locally
 
@@ -23,13 +23,18 @@ Quality checks:
 ```bash
 npm test
 npm run build
+npm run build:pages
 ```
+
+## GitHub Pages
+
+Pushes to `Simplified` run [the GitHub Pages workflow](.github/workflows/deploy-pages.yml). The workflow builds a static version with the `/curtis_orchard/` base path and deploys `dist-pages` to GitHub Pages.
+
+Published site: <https://oliviayanhuang.github.io/curtis_orchard/>
 
 ## Content status
 
-The initial September 7, 2026 snapshot is a clearly labeled pilot preview derived from Curtis Orchard’s official website. Weather-sensitive activities are intentionally marked **Status not confirmed**. A staff update changes the visible snapshot only in the current browser using local storage.
-
-The production system still needs Curtis-controlled authentication and a shared, server-backed publishing store before permanent QR signs or the `visit.curtisorchard.com` domain go live. See [Production handoff](docs/production-handoff.md).
+The visitor-facing copy is based on Curtis Orchard's official website and organized for the simplified prototype. Details that may change by date, season, or weather should be confirmed with Curtis Orchard before a visit.
 
 ## Primary source pages
 
@@ -38,4 +43,3 @@ The production system still needs Curtis-controlled authentication and a shared,
 - [Land of Oz](https://www.curtisorchard.com/the-land-of-oz)
 - [Directions](https://www.curtisorchard.com/directions)
 - [FAQ](https://www.curtisorchard.com/faq)
-
